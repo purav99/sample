@@ -34,23 +34,17 @@
   </div>
 
   <!-- Mobile Menu -->
-  <<header class="navbar">
-  <div class="logo">MySite</div>
-  <div class="hamburger" onclick="toggleMenu()">
-    <span></span>
-    <span></span>
-    <span></span>
+  <div id="mobile-menu" class="md:hidden hidden px-6 pb-4">
+    <ul class="space-y-2 text-center">
+      <li><a href="index.html" class="block py-2 hover:text-blue-400">Home</a></li>
+      <li><a href="about.html" class="block py-2 hover:text-blue-400">About</a></li>
+      <li><a href="services.html" class="block py-2 hover:text-blue-400">Services</a></li>
+      <li><a href="contact.html" class="block py-2 hover:text-blue-400">Contact</a></li>
+    </ul>
   </div>
-  <ul id="menu">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
 </header>
 
-</header>
-
+  </header>
 
   <!-- Main Content -->
   <main class="pt-32 px-6 pb-20">
@@ -149,12 +143,5 @@
     lastScrollTop = scrollTop;
   });
 </script>
-<script>
-  function toggleMenu() {
-    const menu = document.getElementById("menu");
-    menu.classList.toggle("active");
-  }
-</script>
-
 </body>
 </html>
