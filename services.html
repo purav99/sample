@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services - Sample</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-gray-950 text-white font-sans scroll-smooth">
+  <!-- Header -->
+  <header class="fixed top-0 w-full z-50 bg-black text-white shadow-md">
+    <header id="navbar" class="fixed top-0 left-0 w-full bg-black text-white shadow-md z-50 transition-transform duration-500">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold">MySite</h1>
+    <nav>
+      <ul class="flex space-x-6">
+        <li><a href="index.html" class="hover:text-blue-400 transition">Home</a></li>
+        <li><a href="about.html" class="hover:text-blue-400 transition">About</a></li>
+        <li><a href="services.html" class="hover:text-blue-400 transition">Services</a></li>
+        <li><a href="contact.html" class="hover:text-blue-400 transition">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  </header>
+
+  <!-- Main Content -->
+  <main class="pt-32 px-6 pb-20">
+    <!-- Intro -->
+    <section class="text-center mb-16" data-aos="fade-down">
+      <h1 class="text-5xl font-bold text-indigo-400 mb-4">Our Services</h1>
+      <p class="max-w-3xl mx-auto text-gray-300 text-lg">
+        We offer a wide range of accounting, tax, and advisory services designed to help you grow your business confidently and sustainably.
+      </p>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="grid md:grid-cols-3 gap-10 px-4 md:px-20" data-aos="fade-up">
+      <!-- Service 1 -->
+      <div class="bg-gray-900 p-6 rounded-xl shadow-xl hover:shadow-blue-500/40 hover:scale-105 transition-transform duration-500">
+        <h2 class="text-2xl font-semibold text-blue-400 mb-3">Bookkeeping</h2>
+        <p class="text-gray-300">
+          Stay on top of your finances with our accurate and timely bookkeeping services, tailored to your business size.
+        </p>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="bg-gray-900 p-6 rounded-xl shadow-xl hover:shadow-blue-500/40 hover:scale-105 transition-transform duration-500">
+        <h2 class="text-2xl font-semibold text-green-400 mb-3">Tax Filing</h2>
+        <p class="text-gray-300">
+          Ensure full compliance and maximize savings with our expert tax preparation and advisory solutions.
+        </p>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="bg-gray-900 p-6 rounded-xl shadow-xl hover:shadow-blue-500/40 hover:scale-105 transition-transform duration-500">
+        <h2 class="text-2xl font-semibold text-yellow-400 mb-3">Financial Analysis</h2>
+        <p class="text-gray-300">
+          We help you make data-driven decisions with detailed financial reports and future-ready forecasts.
+        </p>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="bg-gray-900 p-6 rounded-xl shadow-xl hover:shadow-blue-500/40 hover:scale-105 transition-transform duration-500">
+        <h2 class="text-2xl font-semibold text-pink-400 mb-3">Startup Consulting</h2>
+        <p class="text-gray-300">
+          Starting a new business? Our experts guide you through legal setup, registration, and financial planning.
+        </p>
+      </div>
+
+      <!-- Service 5 -->
+      <div class="bg-gray-900 p-6 rounded-xl shadow-xl hover:shadow-blue-500/40 hover:scale-105 transition-transform duration-500">
+        <h2 class="text-2xl font-semibold text-indigo-400 mb-3">Payroll Management</h2>
+        <p class="text-gray-300">
+          Streamline employee payments with automated and accurate payroll solutions tailored for your needs.
+        </p>
+      </div>
+
+      <!-- Service 6 -->
+      <div class="bg-gray-900 p-6 rounded-xl shadow-xl hover:shadow-blue-500/40 hover:scale-105 transition-transform duration-500">
+        <h2 class="text-2xl font-semibold text-red-400 mb-3">Business Advisory</h2>
+        <p class="text-gray-300">
+          Get strategic advice on scaling your business, handling cash flow, or preparing for investor presentations.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="text-center mt-20" data-aos="fade-up">
+      <h3 class="text-2xl font-semibold mb-3 text-green-400">Ready to Get Started?</h3>
+      <p class="text-gray-400 mb-6">We’re just one click away. Let’s build success — together.</p>
+      <a href="contact.html" class="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-full text-white font-medium transition duration-300 shadow-lg">
+        Contact Us
+      </a>
+    </section>
+  </main>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 500,
+      offset: 50,
+      easing: 'ease-in-out',
+    });
+  </script>
+  <script>
+  let lastScrollTop = 0;
+  const navbar = document.getElementById("navbar");
+
+  window.addEventListener("scroll", function () {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+      // Scrolling down
+      navbar.style.transform = "translateY(-100%)";
+    } else {
+      // Scrolling up
+      navbar.style.transform = "translateY(0)";
+    }
+    lastScrollTop = scrollTop;
+  });
+</script>
+</body>
+</html>

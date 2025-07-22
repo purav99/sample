@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us</title>
+  <!-- TailwindCSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Vanta.js + Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.dots.min.js"></script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d1117;
+      color: white;
+      position: relative;
+      z-index: 0;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 350px;
+      border: 0;
+      filter: grayscale(30%) invert(5%) contrast(120%);
+    }
+
+    input, textarea {
+      background-color: #1f2937 !important;
+    }
+
+    #vanta-bg {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Vanta Background -->
+  <div id="vanta-bg"></div>
+
+  <!-- Navbar -->
+  <header id="navbar" class="fixed top-0 left-0 w-full bg-black bg-opacity-90 text-white shadow-lg z-50 transition-transform duration-500 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-blue-400">MyAccountCo</h1>
+      <nav>
+        <ul class="flex space-x-6">
+          <li><a href="index.html" class="hover:text-blue-400 transition">Home</a></li>
+          <li><a href="about.html" class="hover:text-blue-400 transition">About</a></li>
+          <li><a href="services.html" class="hover:text-blue-400 transition">Services</a></li>
+          <li><a href="contact.html" class="text-blue-400 font-semibold">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Spacer -->
+  <div class="h-20"></div>
+  <h2 class="text-3xl font-bold mb-6 text-center text-indigo-400">Contact Us</h2>
+
+  <!-- Contact Info Cards -->
+  <section class="py-16 px-6" data-aos="fade-up">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+      <div class="bg-gray-900 p-6 rounded-xl shadow-xl hover:shadow-blue-500/40 hover:scale-105 transition-transform duration-500">
+        <h3 class="text-xl font-semibold text-green-400 mb-2">Address</h3>
+        <p class="text-gray-300">123 Business Street,<br> City, Country 123456</p>
+      </div>
+      <div class="bg-gray-900 p-6 rounded-xl shadow-xl hover:shadow-blue-500/40 hover:scale-105 transition-transform duration-500">
+        <h3 class="text-xl font-semibold text-yellow-400 mb-2">Phone</h3>
+        <p class="text-gray-300">+91 98765 43210</p>
+      </div>
+      <div class="bg-gray-900 p-6 rounded-xl shadow-xl hover:shadow-blue-500/40 hover:scale-105 transition-transform duration-500">
+        <h3 class="text-xl font-semibold text-red-400 mb-2">Email</h3>
+        <p class="text-gray-300">info@myaccountco.com</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="py-16 px-6 bg-opacity-90" data-aos="fade-up">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6 text-center text-indigo-400">Send us a message</h2>
+      <form action="https://formspree.io/f/your-form-id" method="POST" class="bg-gray-800 bg-opacity-80 p-8 rounded-lg shadow-lg space-y-6">
+        <div>
+          <label class="block mb-2 text-gray-300">Name</label>
+          <input type="text" name="name" required class="w-full p-3 rounded text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        <div>
+          <label class="block mb-2 text-gray-300">Email</label>
+          <input type="email" name="email" required class="w-full p-3 rounded text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        <div>
+          <label class="block mb-2 text-gray-300">Message</label>
+          <textarea name="message" rows="5" required class="w-full p-3 rounded text-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+        </div>
+        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg transition duration-300">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Google Map -->
+  <section class="py-16 px-6 bg-opacity-90" data-aos="fade-up">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6 text-center text-indigo-400">Our Location</h2>
+      <div class="map-container rounded-xl overflow-hidden shadow-lg">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.093425102267!2d144.95373531531736!3d-37.81627997975159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43f2e3f6e1%3A0x7e40f10f62c1d193!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1615860322923!5m2!1sen!2sau"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-center py-6 mt-12">
+    <p class="text-gray-400">&copy; 2025 MyAccountCo. All rights reserved.</p>
+  </footer>
+
+  <!-- JS Scripts -->
+  <script>
+    AOS.init();
+  </script>
+
+  <script>
+    // Scroll navbar hide/reveal
+    let lastScrollTop = 0;
+    const navbar = document.getElementById("navbar");
+
+    window.addEventListener("scroll", function () {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop > lastScrollTop) {
+        navbar.style.transform = "translateY(-100%)";
+      } else {
+        navbar.style.transform = "translateY(0)";
+      }
+      lastScrollTop = scrollTop;
+    });
+  </script>
+
+  <!-- Vanta Init -->
+  <script>
+    VANTA.DOTS({
+      el: "#vanta-bg",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0x1f3b7c,
+      color2: 0x0c0e4f,
+      backgroundColor: 0x080d16
+    });
+  </script>
+
+</body>
+</html>
